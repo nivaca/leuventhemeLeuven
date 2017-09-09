@@ -8,7 +8,7 @@ This file may be distributed and/or modified
 1. under the LaTeX Project Public License and/or
 2. under the GNU Public License.
 
-This simple LaTeX theme was inspired by Fabrice Niessen's beautiful Emacs theme [leuven](https://github.com/fniessen/emacs-leuven-theme).
+This LaTeX theme was losely inspired by Fabrice Niessen's beautiful Emacs theme [leuven](https://github.com/fniessen/emacs-leuven-theme).
 
 
 ![First page](/images/01.png)
