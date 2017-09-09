@@ -1,0 +1,58 @@
+% Copyright 2017 Nicolas Vaughan <nivaca@fastmail.com>
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\mode<presentation>
+
+\setbeamertemplate{navigation symbols}{}
+
+\beamerdefaultoverlayspecification{<+->}
+\setbeamercovered{dynamic}
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\usecolortheme{whale}
+\usecolortheme{orchid}
+\useoutertheme{infolines}
+
+\setbeamertemplate{title page}[default][wd=\textwidth,colsep=0pt,rounded=true,shadow=false]
+
+
+\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+
+\usefonttheme{structuresmallcapsserif}
+\usefonttheme{serif}
+\setbeamerfont{structure}{shape=\itshape, family=\rmfamily}
+\setbeamerfont{frametitle}{shape=\itshape, family=\rmfamily}
+\setbeamerfont{title}{shape=\itshape\LARGE, family=\rmfamily}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{bluenivaca}{HTML}{335EA8}
+\definecolor{bonenivaca}{HTML}{FFFFFF}
+\definecolor{goldnivaca}{HTML}{FFFFFF}
+
+
+\setbeamercolor{structure}{bg=black, fg=bluenivaca}
+\setbeamercolor{frametitle}{bg=bluenivaca, fg=goldnivaca}
+\setbeamercolor{title}{bg=bluenivaca, fg=goldnivaca}
+
+\setbeamercolor{normal text}{fg=black, bg=bonenivaca}
+
+\setbeamercolor*{palette primary}{use=structure, fg=goldnivaca, bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure, fg=goldnivaca, bg=structure.fg}
+\setbeamercolor*{palette tertiary}{use=structure, fg=goldnivaca, bg=structure.fg}
+\setbeamercolor*{palette quaternary}{use=structure, fg=goldnivaca, bg=structure.fg}
+
+\mode
+<all>
