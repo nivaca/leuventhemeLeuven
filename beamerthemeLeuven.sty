@@ -11,9 +11,6 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-\beamerdefaultoverlayspecification{<+->}
-\setbeamercovered{dynamic}
-
 \newif\ifbeamer@secheader
 \beamer@secheaderfalse
 
@@ -35,8 +32,13 @@
 \setbeamerfont{structure}{shape=\itshape, family=\rmfamily}
 \setbeamerfont{frametitle}{shape=\itshape, family=\rmfamily}
 \setbeamerfont{title}{shape=\itshape\LARGE, family=\rmfamily}
-\setbeamertemplate{itemize items}[default]
-\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths\textbullet}}
+\setbeamertemplate{itemize subitem}{\small\raise1.5pt\hbox{\donotcoloroutermaths\textbullet}}
+\setbeamertemplate{itemize subsubitem}{\small\raise1.5pt\hbox{\donotcoloroutermaths\textbullet}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
 
 \definecolor{bluenivaca}{HTML}{335EA8}
 \definecolor{bonenivaca}{HTML}{FFFFFF}
@@ -53,6 +55,8 @@
 \setbeamercolor*{palette secondary}{use=structure, fg=goldnivaca, bg=structure.fg}
 \setbeamercolor*{palette tertiary}{use=structure, fg=goldnivaca, bg=structure.fg}
 \setbeamercolor*{palette quaternary}{use=structure, fg=goldnivaca, bg=structure.fg}
+
+\beamerdefaultoverlayspecification{<+->}
 
 \mode
 <all>
