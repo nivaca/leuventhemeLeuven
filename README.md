@@ -1,7 +1,7 @@
 # beamerthemeNivaca
 Nivaca Beamer Theme
 
-Copyright 2017 Nicolas Vaughan (nivaca at fastmail dot com)
+Copyright 2025 Nicolas Vaughan (nivaca at fastmail dot com)
 
 This file may be distributed and/or modified
 
