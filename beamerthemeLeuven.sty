@@ -1,4 +1,4 @@
-% Copyright 2017 Nicolas Vaughan <nivaca@fastmail.com>
+% Copyright 2025 Nicolas Vaughan <nivaca at fastmail dot com>
 %
 % This file may be distributed and/or modified
 %
@@ -8,6 +8,9 @@
 % See the file doc/licenses/LICENSE for more details.
 
 \mode<presentation>
+\setbeamersize{text margin left=1em,text margin right=1em}
+% \renewcommand{\normalsize}{\fontsize{10pt}{12pt}\selectfont}
+% \renewcommand{\normalsize}{\fontsize{\f@size pt}{\f@baselineskip pt}\selectfont}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -23,35 +26,66 @@
 
 \setbeamertemplate{title page}[default][wd=\textwidth,colsep=0pt,rounded=true,shadow=false]
 
-
 \ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
 
-
-\usefonttheme{structuresmallcapsserif}
+% Font themes and settings come AFTER color/outer themes
 \usefonttheme{serif}
-\setbeamerfont{structure}{shape=\upshape, family=\rmfamily}
-\setbeamerfont{title}{size=\Large, shape=\itshape, series=\mdseries, parent=structure}
-\setbeamerfont{subtitle}{size=\normalsize, parent=title}
-\setbeamerfont{author}{size=\normalsize, series=\mdseries, parent=structure}
-\setbeamerfont{date}{size=\footnotesize, series=\mdseries, parent=structure}
-\setbeamerfont{institute}{size=\footnotesize, series=\mdseries, parent=structure}
+\setbeamerfont{structure}{family=\rmfamily, shape=\upshape}
+\setbeamerfont{normal text}{size=\normalsize, family=\rmfamily}
+\setbeamerfont{title}{size=\Large, shape=\upshape\itshape, series=\mdseries, parent=structure}
+\setbeamerfont{subtitle}{size=\normalsize, shape=\upshape\itshape, series=\mdseries, parent=structure}
+\setbeamerfont{author}{size=\normalsize, shape=\upshape, series=\mdseries, parent=structure}
+\setbeamerfont{date}{size=\footnotesize, shape=\upshape, series=\mdseries, parent=structure}
+\setbeamerfont{institute}{size=\footnotesize, shape=\upshape, series=\mdseries, parent=structure}
 \setbeamerfont{section in toc}{size=\large, series=\bfseries, parent=structure}
-\setbeamerfont{section in head/foot}{size=\tiny, parent=structure}
 \setbeamerfont{subsection in toc}{size=\small, series=\mdseries, parent={section in toc}}
-\setbeamerfont{frametitle}{size=\Large,  shape=\itshape,  series=\mdseries, parent=structure}
+\setbeamerfont{frametitle}{size=\Large, shape=\itshape, series=\mdseries, parent=structure}
 \setbeamerfont{framesubtitle}{parent=frametitle, size=\large}
 \setbeamerfont{caption}{size=\footnotesize}
 \setbeamerfont{item}{parent=structure, series=\mdseries}
 \setbeamerfont{block title}{size=\large, series=\mdseries, parent={structure, block body}}
 
+% Title page specific fonts
+\setbeamerfont{title page}{shape=\upshape}
+\setbeamerfont{author on title page}{shape=\upshape, parent=author}
+\setbeamerfont{institute on title page}{shape=\upshape, parent=institute}
+\setbeamerfont{subtitle on title page}{shape=\upshape, parent=subtitle}
 
+% Header/footer fonts
+\setbeamerfont{author in head/foot}{size=\tiny, shape=\scshape, series=\normalfont, parent=structure}
+\setbeamerfont{title in head/foot}{size=\tiny, shape=\scshape, series=\normalfont, parent=structure}
+\setbeamerfont{date in head/foot}{size=\tiny, shape=\scshape, series=\normalfont, parent=structure}
+\setbeamerfont{section in head/foot}{size=\tiny, shape=\scshape, series=\normalfont, parent=structure}
+\setbeamerfont{subsection in head/foot}{size=\tiny, shape=\scshape, series=\normalfont, parent=structure}
 
+% Force small caps in footline by redefining the template
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\textsc{\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\textsc{\insertshorttitle}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\textsc{\insertshortdate{}}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% ----------------------------------------------------------------
+
+% Itemize templates
 \setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
 \setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
 \setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
 
 \setbeamertemplate{enumerate items}[default]
 
+% Color definitions
 \definecolor{bluenivaca}{HTML}{335EA8}
 
 \setbeamercolor{structure}{bg=black, fg=bluenivaca}
