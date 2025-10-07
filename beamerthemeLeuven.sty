@@ -29,32 +29,41 @@
 
 \usefonttheme{structuresmallcapsserif}
 \usefonttheme{serif}
-\setbeamerfont{structure}{shape=\itshape, family=\rmfamily}
-\setbeamerfont{frametitle}{shape=\itshape, family=\rmfamily}
-\setbeamerfont{title}{shape=\itshape\LARGE, family=\rmfamily}
-\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths\textbullet}}
-\setbeamertemplate{itemize subitem}{\small\raise1.5pt\hbox{\donotcoloroutermaths\textbullet}}
-\setbeamertemplate{itemize subsubitem}{\small\raise1.5pt\hbox{\donotcoloroutermaths\textbullet}}
-\setbeamertemplate{enumerate item}{\insertenumlabel.}
-\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
-\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
-\setbeamertemplate{enumerate mini template}{\insertenumlabel}
+\setbeamerfont{structure}{shape=\upshape, family=\rmfamily}
+\setbeamerfont{title}{size=\Large, shape=\itshape, series=\mdseries, parent=structure}
+\setbeamerfont{subtitle}{size=\normalsize, parent=title}
+\setbeamerfont{author}{size=\normalsize, series=\mdseries, parent=structure}
+\setbeamerfont{date}{size=\footnotesize, series=\mdseries, parent=structure}
+\setbeamerfont{institute}{size=\footnotesize, series=\mdseries, parent=structure}
+\setbeamerfont{section in toc}{size=\large, series=\bfseries, parent=structure}
+\setbeamerfont{section in head/foot}{size=\tiny, parent=structure}
+\setbeamerfont{subsection in toc}{size=\small, series=\mdseries, parent={section in toc}}
+\setbeamerfont{frametitle}{size=\large,  shape=\itshape,  series=\mdseries, parent=structure}
+\setbeamerfont{framesubtitle}{parent=frametitle, size=\large}
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamerfont{item}{parent=structure, series=\mdseries}
+\setbeamerfont{block title}{size=\large, series=\mdseries, parent={structure, block body}}
+
+
+
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+
+\setbeamertemplate{enumerate items}[default]
 
 \definecolor{bluenivaca}{HTML}{335EA8}
-\definecolor{bonenivaca}{HTML}{FFFFFF}
-\definecolor{goldnivaca}{HTML}{FFFFFF}
-
 
 \setbeamercolor{structure}{bg=black, fg=bluenivaca}
-\setbeamercolor{frametitle}{bg=bluenivaca, fg=goldnivaca}
-\setbeamercolor{title}{bg=bluenivaca, fg=goldnivaca}
+\setbeamercolor{frametitle}{bg=bluenivaca, fg=white}
+\setbeamercolor{title}{bg=bluenivaca, fg=white}
 
-\setbeamercolor{normal text}{fg=black, bg=bonenivaca}
+\setbeamercolor{normal text}{fg=black, bg=white}
 
-\setbeamercolor*{palette primary}{use=structure, fg=goldnivaca, bg=structure.fg}
-\setbeamercolor*{palette secondary}{use=structure, fg=goldnivaca, bg=structure.fg}
-\setbeamercolor*{palette tertiary}{use=structure, fg=goldnivaca, bg=structure.fg}
-\setbeamercolor*{palette quaternary}{use=structure, fg=goldnivaca, bg=structure.fg}
+\setbeamercolor*{palette primary}{use=structure, fg=white, bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure, fg=white, bg=structure.fg}
+\setbeamercolor*{palette tertiary}{use=structure, fg=white, bg=structure.fg}
+\setbeamercolor*{palette quaternary}{use=structure, fg=white, bg=structure.fg}
 
 \beamerdefaultoverlayspecification{<+->}
 
